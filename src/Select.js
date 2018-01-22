@@ -46,6 +46,7 @@ var Select = React.createClass({
 		onFocus: React.PropTypes.func,             // onFocus handler: function (event) {}
 		onInputChange: React.PropTypes.func,       // onInputChange handler: function (inputValue) {}
 		onOptionLabelClick: React.PropTypes.func,  // onCLick handler for value labels: function (value, event) {}
+		shouldKeyDownEventCreateNewOption: React.PropTypes.func, // function check whether a key should permit creating a new option: function(event) => bool
 		optionComponent: React.PropTypes.func,     // option component to render in dropdown
 		optionRenderer: React.PropTypes.func,      // optionRenderer: function (option) {}
 		options: React.PropTypes.array,            // array of options
@@ -86,6 +87,7 @@ var Select = React.createClass({
 			onChange: undefined,
 			onInputChange: undefined,
 			onOptionLabelClick: undefined,
+			shouldKeyDownEventCreateNewOption: undefined,
 			optionComponent: Option,
 			options: undefined,
 			placeholder: 'Select...',
@@ -458,6 +460,10 @@ var Select = React.createClass({
 
 	handleKeyDown (event) {
 		if (this.props.disabled) return;
+		var allowNewOption = true;
+		if (this.props.shouldKeyDownEventCreateNewOption) {
+			allowNewOption = this.props.shouldKeyDownEventCreateNewOption(event);
+		}
 		switch (event.keyCode) {
 			case 8: // backspace
 				if (!this.state.inputValue && this.props.backspaceRemoves) {
@@ -466,13 +472,13 @@ var Select = React.createClass({
 				}
 			return;
 			case 9: // tab
-				if (event.shiftKey || !this.state.isOpen || !this.state.focusedOption) {
+				if (event.shiftKey || !this.state.isOpen || !this.state.focusedOption || !allowNewOption) {
 					return;
 				}
 				this.selectFocusedOption();
 			break;
 			case 13: // enter
-				if (!this.state.isOpen) return;
+				if (!this.state.isOpen || !allowNewOption) return;
 				this.selectFocusedOption();
 			break;
 			case 27: // escape
@@ -489,7 +495,7 @@ var Select = React.createClass({
 				this.focusNextOption();
 			break;
 			case 188: // ,
-				if (this.props.allowCreate && this.props.multi) {
+				if (this.props.allowCreate && this.props.multi && allowNewOption) {
 					event.preventDefault();
 					event.stopPropagation();
 					this.selectFocusedOption();
