@@ -1,5 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
+const PropTypes = require('prop-types');
 
 function logChange() {
 	console.log.apply(console, [].concat(['Select value changed:'], Array.prototype.slice.apply(arguments)));
@@ -8,10 +9,10 @@ function logChange() {
 var SelectedValuesField = React.createClass({
 	displayName: 'SelectedValuesField',
 	propTypes: {
-		allowCreate: React.PropTypes.bool,
-		hint: React.PropTypes.string,
-		label: React.PropTypes.string,
-		options: React.PropTypes.array,
+		allowCreate: PropTypes.bool,
+		hint: PropTypes.string,
+		label: PropTypes.string,
+		options: PropTypes.array,
 	},
 	onLabelClick (data, event) {
 		console.log(data, event);

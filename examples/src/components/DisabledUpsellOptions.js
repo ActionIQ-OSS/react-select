@@ -1,5 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
+const PropTypes = require('prop-types');
 
 function logChange() {
 	console.log.apply(console, [].concat(['Select value changed:'], Array.prototype.slice.apply(arguments)));
@@ -8,7 +9,7 @@ function logChange() {
 var DisabledUpsellOptions = React.createClass({
 	displayName: 'DisabledUpsellOptions',
 	propTypes: {
-		label: React.PropTypes.string,
+		label: PropTypes.string,
 	},
 	onLabelClick: function (data, event) {
 		console.log(data, event);

@@ -1,11 +1,12 @@
 import React from 'react';
 import Select from 'react-select';
+const PropTypes = require('prop-types');
 
 var RemoteSelectField = React.createClass({
 	displayName: 'RemoteSelectField',
 	propTypes: {
-		hint: React.PropTypes.string,
-		label: React.PropTypes.string,
+		hint: PropTypes.string,
+		label: PropTypes.string,
 	},
 	loadOptions (input, callback) {
 		input = input.toLowerCase();

@@ -1,5 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
+const PropTypes = require('prop-types');
 
 const STATES = require('../data/states');
 var id = 0;
@@ -11,8 +12,8 @@ function logChange() {
 var StatesField = React.createClass({
 	displayName: 'StatesField',
 	propTypes: {
-		label: React.PropTypes.string,
-		searchable: React.PropTypes.bool,
+		label: PropTypes.string,
+		searchable: PropTypes.bool,
 	},
 	getDefaultProps () {
 		return {

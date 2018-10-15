@@ -1,13 +1,13 @@
 import React from 'react';
 import Select from 'react-select';
-
+const PropTypes = require("prop-types");
 var CONTRIBUTORS = require('../data/contributors');
 
 var Contributors = React.createClass({
 	displayName: 'Contributors',
 	propTypes: {
-		hint: React.PropTypes.string,
-		label: React.PropTypes.string,
+		hint: PropTypes.string,
+		label: PropTypes.string,
 	},
 	getInitialState () {
 		return {

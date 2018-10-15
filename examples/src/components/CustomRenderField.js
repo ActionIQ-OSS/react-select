@@ -1,5 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
+const PropTypes = require('prop-types');
 
 function logChange() {
 	console.log.apply(console, [].concat(['Select value changed:'], Array.prototype.slice.apply(arguments)));
@@ -8,9 +9,9 @@ function logChange() {
 var CustomRenderField = React.createClass({
 	displayName: 'CustomRenderField',
 	propTypes: {
-		delimiter: React.PropTypes.string,
-		label: React.PropTypes.string,
-		multi: React.PropTypes.bool,
+		delimiter: PropTypes.string,
+		label: PropTypes.string,
+		multi: PropTypes.bool,
 	},
 	getInitialState () {
 		return {};
