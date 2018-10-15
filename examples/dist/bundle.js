@@ -1038,7 +1038,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var React = require('react');
 var ReactDOM = require('react-dom');
-var PropTypes = require("prop-types");
+var PropTypes = require('prop-types');
 var Input = require('react-input-autosize');
 var classes = require('classnames');
 var Value = require('./Value');
