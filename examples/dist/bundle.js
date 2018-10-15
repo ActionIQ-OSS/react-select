@@ -850,18 +850,19 @@ module.exports = ReactPropTypesSecret;
 
 var React = require('react');
 var classes = require('classnames');
+var PropTypes = require('prop-types');
 
 var Option = React.createClass({
 	displayName: 'Option',
 
 	propTypes: {
-		addLabelText: React.PropTypes.string, // string rendered in case of allowCreate option passed to ReactSelect
-		className: React.PropTypes.string, // className (based on mouse position)
-		mouseDown: React.PropTypes.func, // method to handle click on option element
-		mouseEnter: React.PropTypes.func, // method to handle mouseEnter on option element
-		mouseLeave: React.PropTypes.func, // method to handle mouseLeave on option element
-		option: React.PropTypes.object.isRequired, // object that is base for that option
-		renderFunc: React.PropTypes.func // method passed to ReactSelect component to render label text
+		addLabelText: PropTypes.string, // string rendered in case of allowCreate option passed to ReactSelect
+		className: PropTypes.string, // className (based on mouse position)
+		mouseDown: PropTypes.func, // method to handle click on option element
+		mouseEnter: PropTypes.func, // method to handle mouseEnter on option element
+		mouseLeave: PropTypes.func, // method to handle mouseLeave on option element
+		option: PropTypes.object.isRequired, // object that is base for that option
+		renderFunc: PropTypes.func // method passed to ReactSelect component to render label text
 	},
 	blockEvent: function blockEvent(event) {
 		event.preventDefault();
@@ -911,18 +912,19 @@ var Option = React.createClass({
 
 module.exports = Option;
 
-},{"classnames":undefined,"react":undefined}],8:[function(require,module,exports){
+},{"classnames":undefined,"prop-types":5,"react":undefined}],8:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
 var classes = require('classnames');
+var PropTypes = require('prop-types');
 
 var SingleValue = React.createClass({
 	displayName: 'SingleValue',
 
 	propTypes: {
-		placeholder: React.PropTypes.string, // this is default value provided by React-Select based component
-		value: React.PropTypes.object // selected option
+		placeholder: PropTypes.string, // this is default value provided by React-Select based component
+		value: PropTypes.object // selected option
 	},
 	render: function render() {
 		var classNames = classes('Select-placeholder', this.props.value && this.props.value.className);
@@ -940,23 +942,24 @@ var SingleValue = React.createClass({
 
 module.exports = SingleValue;
 
-},{"classnames":undefined,"react":undefined}],9:[function(require,module,exports){
+},{"classnames":undefined,"prop-types":5,"react":undefined}],9:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
 var classes = require('classnames');
+var PropTypes = require('prop-types');
 
 var Value = React.createClass({
 
 	displayName: 'Value',
 
 	propTypes: {
-		disabled: React.PropTypes.bool, // disabled prop passed to ReactSelect
-		onOptionLabelClick: React.PropTypes.func, // method to handle click on value label
-		onRemove: React.PropTypes.func, // method to handle remove of that value
-		option: React.PropTypes.object.isRequired, // option passed to component
-		optionLabelClick: React.PropTypes.bool, // indicates if onOptionLabelClick should be handled
-		renderer: React.PropTypes.func // method to render option label passed to ReactSelect
+		disabled: PropTypes.bool, // disabled prop passed to ReactSelect
+		onOptionLabelClick: PropTypes.func, // method to handle click on value label
+		onRemove: PropTypes.func, // method to handle remove of that value
+		option: PropTypes.object.isRequired, // option passed to component
+		optionLabelClick: PropTypes.bool, // indicates if onOptionLabelClick should be handled
+		renderer: PropTypes.func // method to render option label passed to ReactSelect
 	},
 
 	blockEvent: function blockEvent(event) {
@@ -1025,7 +1028,7 @@ var Value = React.createClass({
 
 module.exports = Value;
 
-},{"classnames":undefined,"react":undefined}],"react-select":[function(require,module,exports){
+},{"classnames":undefined,"prop-types":5,"react":undefined}],"react-select":[function(require,module,exports){
 /* disable some rules until we refactor more completely; fixing them now would
    cause conflicts with some open PRs unnecessarily. */
 /* eslint react/jsx-sort-prop-types: 0, react/sort-comp: 0, react/prop-types: 0 */
