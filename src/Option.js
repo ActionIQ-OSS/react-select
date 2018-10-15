@@ -1,8 +1,9 @@
 var React = require('react');
 var classes = require('classnames');
 const PropTypes = require('prop-types');
+const createReactClass = require('create-react-class');
 
-var Option = React.createClass({
+var Option = createReactClass({
 	propTypes: {
 		addLabelText: PropTypes.string,          // string rendered in case of allowCreate option passed to ReactSelect
 		className: PropTypes.string,             // className (based on mouse position)

@@ -1,8 +1,9 @@
 import React from 'react';
 import Select from 'react-select';
 const PropTypes = require('prop-types');
+const createReactClass = require('create-react-class');
 
-var RemoteSelectField = React.createClass({
+var RemoteSelectField = createReactClass({
 	displayName: 'RemoteSelectField',
 	propTypes: {
 		hint: PropTypes.string,

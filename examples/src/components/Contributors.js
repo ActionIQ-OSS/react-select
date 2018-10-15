@@ -1,9 +1,10 @@
 import React from 'react';
 import Select from 'react-select';
-const PropTypes = require("prop-types");
+const PropTypes = require('prop-types');
+const createReactClass = require('create-react-class');
 var CONTRIBUTORS = require('../data/contributors');
 
-var Contributors = React.createClass({
+var Contributors = createReactClass({
 	displayName: 'Contributors',
 	propTypes: {
 		hint: PropTypes.string,

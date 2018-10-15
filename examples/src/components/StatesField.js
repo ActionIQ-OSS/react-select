@@ -1,6 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
 const PropTypes = require('prop-types');
+const createReactClass = require('create-react-class');
 
 const STATES = require('../data/states');
 var id = 0;
@@ -9,7 +10,7 @@ function logChange() {
 	console.log.apply(console, [].concat(['Select value changed:'], Array.prototype.slice.apply(arguments)));
 }
 
-var StatesField = React.createClass({
+var StatesField = createReactClass({
 	displayName: 'StatesField',
 	propTypes: {
 		label: PropTypes.string,

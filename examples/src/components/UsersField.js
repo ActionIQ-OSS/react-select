@@ -3,10 +3,11 @@ import GravatarValue from './CustomSingleValue';
 import React from 'react';
 import Select from 'react-select';
 const PropTypes = require('prop-types');
+const createReactClass = require('create-react-class');
 
 const USERS = require('../data/users');
 
-var UsersField = React.createClass({
+var UsersField = createReactClass({
 	propTypes: {
 		hint: PropTypes.string,
 		label: PropTypes.string,

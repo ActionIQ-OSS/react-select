@@ -1,12 +1,13 @@
 import React from 'react';
 import Select from 'react-select';
 const PropTypes = require('prop-types');
+const createReactClass = require('create-react-class');
 
 function logChange() {
 	console.log.apply(console, [].concat(['Select value changed:'], Array.prototype.slice.apply(arguments)));
 }
 
-var CustomRenderField = React.createClass({
+var CustomRenderField = createReactClass({
 	displayName: 'CustomRenderField',
 	propTypes: {
 		delimiter: PropTypes.string,

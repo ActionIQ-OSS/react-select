@@ -1,8 +1,9 @@
 import React from 'react';
 import Gravatar from 'react-gravatar';
 const PropTypes = require('prop-types');
+const createReactClass = require('create-react-class');
 
-var Option = React.createClass({
+var Option = createReactClass({
 	propTypes: {
 		addLabelText: PropTypes.string,
 		className: PropTypes.string,

@@ -1,8 +1,9 @@
 import React from 'react';
 import Gravatar from 'react-gravatar';
 const PropTypes = require('prop-types');
+const createReactClass = require('create-react-class');
 
-var SingleValue = React.createClass({
+var SingleValue = createReactClass({
 	propTypes: {
 		placeholder: PropTypes.string,
 		value: PropTypes.object

@@ -10,10 +10,11 @@ var classes = require('classnames');
 var Value = require('./Value');
 var SingleValue = require('./SingleValue');
 var Option = require('./Option');
+const createReactClass = require('create-react-class');
 
 var requestId = 0;
 
-var Select = React.createClass({
+var Select = createReactClass({
 
 	displayName: 'Select',
 

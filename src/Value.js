@@ -1,8 +1,9 @@
 var React = require('react');
 var classes = require('classnames');
 const PropTypes = require('prop-types');
+const createReactClass = require('create-react-class');
 
-var Value = React.createClass({
+var Value = createReactClass({
 
 	displayName: 'Value',
 

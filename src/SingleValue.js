@@ -1,8 +1,9 @@
 var React = require('react');
 var classes = require('classnames');
 const PropTypes = require('prop-types');
+const createReactClass = require('create-react-class');
 
-var SingleValue = React.createClass({
+var SingleValue = createReactClass({
 	propTypes: {
 		placeholder: PropTypes.string,       // this is default value provided by React-Select based component
 		value: PropTypes.object              // selected option
