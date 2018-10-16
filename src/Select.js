@@ -748,7 +748,7 @@ var Select = createReactClass({
 				'is-disabled': op.disabled
 			});
 			var ref = isFocused ? 'focused' : null;
-			var optionResult = createReactClass(this.props.optionComponent, {
+			var optionResult = React.createElement(this.props.optionComponent, {
 				key: 'option-' + op[this.props.valueKey],
 				className: optionClass,
 				renderFunc: renderLabel,
@@ -811,7 +811,7 @@ var Select = createReactClass({
 				var renderLabel = this.props.valueRenderer || this.renderOptionLabel;
 				var onOptionLabelClick = this.handleOptionLabelClick.bind(this, val);
 				var onRemove = this.removeValue.bind(this, val);
-				var valueComponent = createReactClass(this.props.valueComponent, {
+				var valueComponent = React.createElement(this.props.valueComponent, {
 					key: val[this.props.valueKey],
 					option: val,
 					renderer: renderLabel,
@@ -833,7 +833,7 @@ var Select = createReactClass({
 						renderer={this.props.valueRenderer}
 						disabled={this.props.disabled} />);
 			} else {
-				var singleValueComponent = createReactClass(this.props.singleValueComponent, {
+				var singleValueComponent = React.createElement(this.props.singleValueComponent, {
 					key: 'placeholder',
 					value: val,
 					placeholder: this.state.placeholder
