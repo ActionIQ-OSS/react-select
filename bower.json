@@ -11,7 +11,7 @@
   ],
   "description": "A Select control built with and for ReactJS",
   "moduleType": [
-    "amd",
+    "es6",
     "globals",
     "node"
   ],
