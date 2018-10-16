@@ -14,8 +14,7 @@ const createReactClass = require('create-react-class');
 
 var requestId = 0;
 
-var Select = createReactClass({
-
+const Select = createReactClass({
 	displayName: 'Select',
 
 	propTypes: {
@@ -918,4 +917,4 @@ var Select = createReactClass({
 	}
 });
 
-export default Select;
+module.exports = Select;
