@@ -35,6 +35,7 @@ export const Select = createReactClass({
 		ignoreCase: PropTypes.bool,          // whether to perform case-insensitive filtering
 		inputProps: PropTypes.object,        // custom attributes for the Input (in the Select-control) e.g: {'data-foo': 'bar'}
 		isLoading: PropTypes.bool,           // whether the Select is loading externally or not (such as options being loaded)
+		keepOpenOnSelect: PropTypes.bool, // if the Select should stay open after the user selects a value
 		labelKey: PropTypes.string,          // path of the label value in option objects
 		matchPos: PropTypes.string,          // (any|start) match the start or entire string when filtering
 		matchProp: PropTypes.string,         // (any|label|value) which option property to filter on
@@ -80,6 +81,7 @@ export const Select = createReactClass({
 			ignoreCase: true,
 			inputProps: {},
 			isLoading: false,
+			keepOpenOnSelect: false,
 			labelKey: 'label',
 			matchPos: 'any',
 			matchProp: 'any',
@@ -315,7 +317,9 @@ export const Select = createReactClass({
 			this._focusAfterUpdate = true;
 		}
 		var newState = this.getStateFromValue(value);
-		newState.isOpen = false;
+		if (!this.props.keepOpenOnSelect) {
+			newState.isOpen = false;
+		}
 		this.fireChangeEvent(newState);
 		this.setState(newState);
 	},
