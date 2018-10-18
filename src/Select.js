@@ -5,7 +5,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 const PropTypes = require('prop-types');
-var Input = require('react-input-autosize');
+import Input from 'react-input-autosize';
 var classes = require('classnames');
 var Value = require('./Value');
 var SingleValue = require('./SingleValue');
@@ -41,6 +41,7 @@ export const Select = createReactClass({
 		multi: PropTypes.bool,               // multi-value input
 		name: PropTypes.string,              // field name, for hidden <input /> tag
 		newOptionCreator: PropTypes.func,    // factory to create new options when allowCreate set
+		keepOpenOnSelect: PropTypes.bool,    // if the Select should stay open after the user selects a value
 		noResultsText: PropTypes.string,     // placeholder displayed when there are no matching search results
 		onBlur: PropTypes.func,              // onBlur handler: function (event) {}
 		onChange: PropTypes.func,            // onChange handler: function (newValue) {}
